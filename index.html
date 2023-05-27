@@ -1,0 +1,773 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HGD</title>
+<style>
+    @font-face {
+    font-family: Estedad;
+    src: url(Estedad.ttf);
+}
+
+body {
+    margin: 0;
+    font-family: Estedad;
+}
+
+.full {
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://s8.uupload.ir/files/arrows_yus6.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: .5s;
+    position: fixed;
+}
+
+.full2 {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(3, 103, 218);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    opacity: 1;
+    transition: .5s;
+
+    position: fixed;
+}
+
+.hide{
+    opacity: 0;
+}
+
+button {
+    border: 0;
+    outline: none;
+    background-color: rgb(182, 37, 37);
+    border-radius: 5px;
+    height: 3rem;
+    width: 8rem;
+    cursor: pointer;
+    color: #fff;
+    animation: rainbow-bg .5s infinite;
+    font-family: Estedad;
+}
+
+@keyframes rainbow-bg {
+    100%, 0% {
+        background-color: rgb(180, 32, 32);
+    }
+
+    33% {
+        background-color: rgb(40, 189, 40);
+    }
+
+    66% {
+        background-color: rgb(10, 136, 219);
+    }
+}
+
+h1, h3 {
+    margin: 0;
+    line-height: 39px;
+    padding: 0 1rem;
+}
+
+h3 {
+    margin-top: 1rem;
+    line-height: 25px;
+}
+
+.full2 button {
+    border-radius: 0;
+    background-color: transparent;
+    border: 3px solid #ffffff5b;
+    animation: none;
+}
+
+
+.p {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://uupload.ir/view/bg_tjij.webp/);
+    background-position: center;
+    background-size: cover;
+}
+
+.birthday-card {
+    position: relative;
+}
+
+.card {
+    background-color: #ffd166;
+    overflow: hidden;
+    width: 380px;
+    height: 380px;
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    top: 340px;
+    left: 65px;
+}
+
+.cake {
+    position: relative;
+    top: 40px;
+}
+
+.card:after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    border-radius: 0 10px 10px 0;
+    width: 122px;
+    background-color: rgba(0, 0, 0, 0.1);
+    top: 340px;
+    left: 193px;
+}
+
+.cake-bottom {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background-color: #06d6a0;
+    top: 240px;
+    left: 91px;
+    border-radius: 7px 7px 0 0;
+    overflow: hidden;
+}
+
+.cake-bottom:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    left: -5px;
+    border-radius: 0 0 50px 50px;
+    background-color: white;
+    box-shadow: 30px 0 white, 60px 0 white, 90px 0 white, 120px 0 white, 150px 0 white, 180px 0 white;
+}
+
+.cake-bottom:before {
+    content: "";
+    position: absolute;
+    background-color: #ef476f;
+    width: 30px;
+    height: 60px;
+    left: 25px;
+    box-shadow: 60px 0 #ef476f, 120px 0 #ef476f;
+}
+
+.cake-middle {
+    position: absolute;
+    width: 150px;
+    height: 60px;
+    background-color: #118ab2;
+    border-radius: 7px 7px 0 0;
+    top: 180px;
+    left: 117px;
+    box-shadow: inset 0 -20px #073b4c;
+    overflow: hidden;
+}
+
+.cake-middle:before {
+    content: "";
+    position: absolute;
+    background-color: #ef476f;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    top: 20px;
+    left: 10px;
+    box-shadow: 15px 10px #ffd166, 30px 0 #06d6a0, 45px 10px #ef476f, 60px 0 #ffd166, 75px 10px #06d6a0, 90px 0 #ef476f, 105px 10px #ffd166, 120px 0 #06d6a0;
+}
+
+.cake-middle:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    left: 0;
+    border-radius: 0 0 50px 50px;
+    background-color: white;
+    box-shadow: 30px 0 white, 60px 0 white, 90px 0 white, 120px 0 white;
+}
+
+.cake-top {
+    position: absolute;
+    width: 100px;
+    height: 60px;
+    background-color: #ef476f;
+    border-radius: 7px 7px 0 0;
+    top: 120px;
+    left: 143px;
+    overflow: hidden;
+    box-shadow: inset 0 20px #118ab2;
+}
+
+.cake-top:before {
+    content: "";
+    position: absolute;
+    background-color: #118ab2;
+    width: 15px;
+    height: 35px;
+    left: -5px;
+    border-radius: 20px;
+    box-shadow: 15px 10px #ef476f, 30px 5px #118ab2, 45px 5px #ef476f, 60px -10px #118ab2, 75px 10px #ef476f, 90px 0 #118ab2;
+}
+
+.cake-top:after {
+    position: absolute;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 50px;
+    border-radius: 0 7px 0 0;
+    height: 60px;
+    left: 50px;
+}
+
+.candle {
+    position: absolute;
+    background: repeating-linear-gradient(-45deg, white, white 5px,
+            #06d6a0 5px, #06d6a0 10px);
+    width: 10px;
+    height: 40px;
+    border-radius: 3px 3px 0 0;
+    top: 80px;
+    left: 188px;
+}
+
+.candle:before {
+    content: "";
+    position: absolute;
+    background-color: #333;
+    width: 1px;
+    height: 10px;
+    top: -10px;
+    left: 4px;
+}
+
+.flame {
+    position: absolute;
+    opacity: 0.7;
+}
+
+.flame:before {
+    content: "";
+    position: absolute;
+    background-color: #fb5607;
+    border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+    transform: rotate(-45deg);
+    width: 20px;
+    height: 20px;
+    top: 55px;
+    left: 183px;
+    animation: scale .5s linear infinite;
+}
+
+.flame:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: #ffbe0b;
+    width: 11px;
+    height: 11px;
+    top: 61px;
+    left: 187.5px;
+    animation: scale .5s linear infinite;
+}
+
+@keyframes scale {
+    0% {
+        transform: scaleY(1) rotate(-45deg);
+    }
+
+    25% {
+        transform: scaleY(1.3) rotate(-45deg);
+    }
+
+    50% {
+        transform: scaleY(1) rotate(-45deg);
+    }
+
+    75% {
+        transform: scaleY(1.3) rotate(-45deg);
+    }
+
+    100% {
+        transform: scaleY(1) rotate(-45deg);
+    }
+}
+
+.shadow {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 60px;
+    width: 74px;
+    border-radius: 0 7px 0 0;
+    top: 180px;
+    left: 193px;
+}
+
+.shadow:before, .shadow:after {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.shadow:before {
+    height: 60px;
+    width: 98.5px;
+    border-radius: 0 7px 0 0;
+    top: 60px;
+}
+
+.shadow:after {
+    height: 40px;
+    width: 5px;
+    border-radius: 0 5px 0 0;
+    top: -100px;
+}
+
+
+.confetti {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    overflow: hidden;
+}
+
+.squareOne, .squareTwo, .squareThree, .squareFour, .squareFive, .squareSix, .squareSeven, .squareEight, .squareNine, .squareTen {
+    position: absolute;
+    width: 10px;
+    height: 25px;
+    top: -110px;
+}
+
+.squareOne {
+    background-color: #ef476f;
+    animation: down 2.5s linear infinite;
+    left: 50px;
+}
+
+.squareTwo {
+    background-color: #06d6a0;
+    animation: down 2.3s linear infinite .2s;
+    left: 150px;
+}
+
+.squareThree {
+    background-color: #118ab2;
+    animation: down 2.4s linear infinite .4s;
+    left: 250px;
+}
+
+.squareFour {
+    background-color: #ffbe0b;
+    animation: down 2.7s linear infinite .1s;
+    left: 300px;
+}
+
+.squareFive {
+    background-color: #118ab2;
+    animation: down 2.6s linear infinite .7s;
+    left: 5px;
+}
+
+@keyframes down {
+    0% {
+        top: -110px;
+        transform: rotate(0deg) rotateY(-90deg);
+        opacity: 1;
+    }
+
+    100% {
+        top: 400px;
+        transform: rotate(360deg) rotateY(180deg);
+        opacity: 0.5;
+    }
+}
+
+@keyframes downTwo {
+    0% {
+        top: -130px;
+        transform: rotate(0deg) rotateY(90deg);
+        opacity: 1;
+    }
+
+    100% {
+        top: 400px;
+        transform: rotate(-360deg) rotateY(-180deg);
+        opacity: 0.5;
+    }
+}
+
+
+.squareSix {
+    background-color: #ffbe0b;
+    animation: downTwo 2.4s linear infinite .2s;
+    left: 70px;
+}
+
+.squareSeven {
+    background-color: #ef476f;
+    animation: downTwo 2.1s linear infinite .7s;
+    left: 170px;
+}
+
+.squareEight {
+    background-color: #ef476f;
+    animation: downTwo 2.4s linear infinite .9s;
+    left: 280px;
+}
+
+.squareNine {
+    background-color: #06d6a0;
+    animation: downTwo 2.9s linear infinite .9s;
+    left: 50px;
+}
+
+.squareTen {
+    background-color: #118ab2;
+    animation: downTwo 2.2s linear infinite 1.1s;
+    left: 350px;
+}
+
+.text {
+    position: absolute;
+    font-family: tahoma;
+    font-size: 35px;
+    z-index: 1;
+    font-weight: bold;
+    width: 380px;
+    text-align: center;
+    top: 30px;
+    color: #073b4c;
+}
+
+.footer{
+    position: fixed;
+    bottom: -5px;
+    background-color: #101010;
+    color: #fff;
+    border-radius: 5px;
+    padding: 1rem;
+
+}
+
+</style></head>
+
+<body>
+    <div class="full hide" id="0" style="display:none;">
+        <button onclick="start()">CLICK ME</button>
+    </div>
+    <div class="full2 hide" id="1" style="display:none">
+        <h1>Hi!</h1>
+    </div>
+
+    <div class="full2" id="interneterr" style="display:none;background-color: #202020;">
+        <div style="text-align: center;">
+            <h1>Turn on your internet connection then refresh this page</h1>
+            <h3 dir="rtl">اینترنتتو روشن کن بعد صفحه رو رفرش کن!</h3>
+        </div>
+    </div>
+
+    <div class="full2 hide" id="2" style="display:none">
+        <div style="text-align: center;">
+            <h1>Please do not close this.</h1>
+            <h3 dir="rtl">لطفا این رو نبند.</h3>
+        </div>
+    </div>
+
+    <div class="full2 hide" id="3" style="display:none">
+        <div style="text-align: center;">
+            <h1>Here I will ask you some questions and if you answer correctly, you will get a prize.</h1>
+            <h3 dir="rtl">اینجا چند تا سوال ازت می پرسم و اگه درست جواب بدی ، جایزه می گیری.</h3>
+        </div>
+    </div>
+
+    <div class="full2 hide" id="4" style="display:none">
+        <div style="text-align: center;">
+            <h1>Do you hate pizza (You have to say yes!)</h1>
+            <h3 dir="rtl">تو از پیتزا بدت میاد؟ (باید بگی آره!)</h3>
+            <div style="margin-top: 2.5rem;">
+                <button onclick="showpagefive()">Yes</button>
+                <button disabled>No</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="full2 hide" id="5" style="display:none">
+        <div style="text-align: center;">
+            <h1>It's good, I like it! You are a good girl, you can enter.</h1>
+            <h3 dir="rtl">خوبه. خوشم اومد! تو دختر خوبی هستی. می تونی وارد بشی.</h3>
+            <div style="margin-top: 2.5rem;">
+                <button onclick="show(six);hide(five);playSong();startConfetti();">ENTER</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="p hide" id="6" style="display:none">
+        <div class="birthday-card">
+            <div class="card">
+                <div class="cake">
+                    <div class="cake-bottom"></div>
+                    <div class="cake-middle"></div>
+                    <div class="cake-top"></div>
+                    <div class="candle"></div>
+                    <div class="flame"></div>
+                    <div class="shadow"></div>
+                </div>
+                <div class="confetti">
+                    <div class="squareOne"></div>
+                    <div class="squareTwo"></div>
+                    <div class="squareThree"></div>
+                    <div class="squareFour"></div>
+                    <div class="squareFive"></div>
+                    <div class="squareSix"></div>
+                    <div class="squareSeven"></div>
+                    <div class="squareEight"></div>
+                    <div class="squareNine"></div>
+                    <div class="squareTen"></div>
+                </div>
+                <div class="text">Happy Girl's Day!</div>
+            </div>
+        </div>
+        <div class="footer">
+            built with ♥ by JavadMahamin
+        </div>
+    </div>
+    <script src="js/confetti.js"></script>
+    <audio controls id="song" src="https://stream.zeno.fm/zytsxwbjfsxvv" style="position:fixed; top:-50rem;">
+    </audio>
+    <script>
+        function playSong() {
+            document.getElementById("song").play();
+        }
+        let online = navigator.onLine;
+
+
+
+
+        let zero = document.getElementById('0');
+        let one = document.getElementById('1');
+        let two = document.getElementById('2');
+        let three = document.getElementById('3');
+        let four = document.getElementById('4');
+        let five = document.getElementById('5');
+        let six = document.getElementById('6');
+        if (online == true) {
+            show(zero);
+        }
+        else{
+            document.getElementById("interneterr").style.display="";
+        }
+
+        function start(){
+            hide(zero);
+            one.style.display = "";
+            one.style.opacity = "1";
+            setTimeout(() => {
+                hide(one);
+                show(two);
+            }, 3000)
+            setTimeout(() => {
+                hide(two);
+                show(three);
+            }, 3000 + 8000)
+            setTimeout(() => {
+                hide(three);
+                show(four);
+            }, 3000 + 8000 + 8000)
+        }
+
+        function showpagefive() {
+            hide(four);
+            show(five);
+        }
+
+        function hide(i) {
+            i.classList.add("hide");
+            setTimeout(() => {
+                i.style.display = "none";
+            }, 300)
+        }
+
+        function show(i) {
+            i.style.display = "";
+            i.classList.remove("hide");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var maxParticleCount = 150; //set max confetti count
+var particleSpeed = 2; //set the particle animation speed
+var startConfetti; //call to start confetti animation
+var stopConfetti; //call to stop adding confetti
+var toggleConfetti; //call to start or stop the confetti animation depending on whether it's already running
+var removeConfetti; //call to stop the confetti animation and remove all confetti immediately
+
+(function() {
+	startConfetti = startConfettiInner;
+	stopConfetti = stopConfettiInner;
+	toggleConfetti = toggleConfettiInner;
+	removeConfetti = removeConfettiInner;
+	var colors = ["DodgerBlue", "OliveDrab", "Gold", "Pink", "SlateBlue", "LightBlue", "Violet", "PaleGreen", "SteelBlue", "SandyBrown", "Chocolate", "Crimson"]
+	var streamingConfetti = false;
+	var animationTimer = null;
+	var particles = [];
+	var waveAngle = 0;
+	
+	function resetParticle(particle, width, height) {
+		particle.color = colors[(Math.random() * colors.length) | 0];
+		particle.x = Math.random() * width;
+		particle.y = Math.random() * height - height;
+		particle.diameter = Math.random() * 10 + 5;
+		particle.tilt = Math.random() * 10 - 10;
+		particle.tiltAngleIncrement = Math.random() * 0.07 + 0.05;
+		particle.tiltAngle = 0;
+		return particle;
+	}
+
+	function startConfettiInner() {
+		var width = window.innerWidth;
+		var height = window.innerHeight;
+		window.requestAnimFrame = (function() {
+			return window.requestAnimationFrame ||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				window.oRequestAnimationFrame ||
+				window.msRequestAnimationFrame ||
+				function (callback) {
+					return window.setTimeout(callback, 16.6666667);
+				};
+		})();
+		var canvas = document.getElementById("confetti-canvas");
+		if (canvas === null) {
+			canvas = document.createElement("canvas");
+			canvas.setAttribute("id", "confetti-canvas");
+			canvas.setAttribute("style", "display:block;z-index:999999;pointer-events:none;    position: fixed;left: 0;top: 0;");
+			document.body.appendChild(canvas);
+			canvas.width = width;
+			canvas.height = height;
+			window.addEventListener("resize", function() {
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+			}, true);
+		}
+		var context = canvas.getContext("2d");
+		while (particles.length < maxParticleCount)
+			particles.push(resetParticle({}, width, height));
+		streamingConfetti = true;
+		if (animationTimer === null) {
+			(function runAnimation() {
+				context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+				if (particles.length === 0)
+					animationTimer = null;
+				else {
+					updateParticles();
+					drawParticles(context);
+					animationTimer = requestAnimFrame(runAnimation);
+				}
+			})();
+		}
+	}
+
+	function stopConfettiInner() {
+		streamingConfetti = false;
+	}
+
+	function removeConfettiInner() {
+		stopConfetti();
+		particles = [];
+	}
+
+	function toggleConfettiInner() {
+		if (streamingConfetti)
+			stopConfettiInner();
+		else
+			startConfettiInner();
+	}
+
+	function drawParticles(context) {
+		var particle;
+		var x;
+		for (var i = 0; i < particles.length; i++) {
+			particle = particles[i];
+			context.beginPath();
+			context.lineWidth = particle.diameter;
+			context.strokeStyle = particle.color;
+			x = particle.x + particle.tilt;
+			context.moveTo(x + particle.diameter / 2, particle.y);
+			context.lineTo(x, particle.y + particle.tilt + particle.diameter / 2);
+			context.stroke();
+		}
+	}
+
+	function updateParticles() {
+		var width = window.innerWidth;
+		var height = window.innerHeight;
+		var particle;
+		waveAngle += 0.01;
+		for (var i = 0; i < particles.length; i++) {
+			particle = particles[i];
+			if (!streamingConfetti && particle.y < -15)
+				particle.y = height + 100;
+			else {
+				particle.tiltAngle += particle.tiltAngleIncrement;
+				particle.x += Math.sin(waveAngle);
+				particle.y += (Math.cos(waveAngle) + particle.diameter + particleSpeed) * 0.5;
+				particle.tilt = Math.sin(particle.tiltAngle) * 15;
+			}
+			if (particle.x > width + 20 || particle.x < -20 || particle.y > height) {
+				if (streamingConfetti && particles.length <= maxParticleCount)
+					resetParticle(particle, width, height);
+				else {
+					particles.splice(i, 1);
+					i--;
+				}
+			}
+		}
+	}
+})();
+    </script>
+</body>
+
+</html>
